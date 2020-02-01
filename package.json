@@ -1,6 +1,17 @@
 {
   "name": "a11y",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bruiztorres/a11y"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "angular",
+    "bootstrap"
+  ],
+  "author": "Borja Ruiz",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,6 +31,7 @@
     "@angular/platform-browser": "~9.0.0-rc.13",
     "@angular/platform-browser-dynamic": "~9.0.0-rc.13",
     "@angular/router": "~9.0.0-rc.13",
+    "bootstrap": "^4.4.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

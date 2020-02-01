@@ -1,0 +1,30 @@
+@import "../../../../styles/abstracts/variables";
+
+$footer-background: $yellow;
+$footer-height: 8rem;
+
+:host {
+  display: flex;
+  padding: $spacer;
+  background-color: $footer-background;
+  height: $footer-height;
+}
+
+.footer {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-bottom: $spacer / 4;
+  }
+
+  &__link {
+    color: $white;
+  }
+}

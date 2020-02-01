@@ -1,0 +1,28 @@
+@import "../../../../styles/abstracts/variables";
+
+:host {
+  display: flex;
+  height: 100%;
+  padding: $spacer;
+}
+
+.sidebar {
+  &__search {
+    padding-bottom: 2rem;
+  }
+
+  &__item {
+    padding-top: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media all and (min-width: 800px) {
+  :host {
+    border-right: 1px solid $border-color;
+  }
+}

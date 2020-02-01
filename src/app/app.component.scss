@@ -1,0 +1,37 @@
+@import "../styles/abstracts/variables";
+
+$sidebar-width: 20rem;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout {
+  &__content {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+  }
+
+  &__main {
+    padding: $spacer;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .layout {
+    &__main {
+      flex: 1;
+    }
+
+    &__aside {
+      flex: 0 0 $sidebar-width;
+    }
+
+    &__content {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../../styles/abstracts/variables";
+
+$icon-color: #333;
+$header-height: 4rem;
+
+:host {
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  height: $header-height;
+  padding: $spacer;
+}
+
+.header {
+  &__icon {
+    color: $icon-color;
+    text-decoration: none;
+  }
+}
