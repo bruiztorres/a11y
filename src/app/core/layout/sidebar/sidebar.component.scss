@@ -1,18 +1,25 @@
 @import "../../../../styles/abstracts/variables";
+@import "../../../../styles/vendors/bootstrap";
 
 :host {
   display: flex;
+  flex-direction: column;
   height: 100%;
   padding: $spacer;
 }
 
 .sidebar {
   &__search {
-    padding-bottom: 2rem;
+    padding-bottom: $spacer;
+  }
+
+  &__items {
+    margin-top: $spacer;
   }
 
   &__item {
-    padding-top: 0.5rem;
+    font-weight: 500;
+    padding-top: $spacer / 4;
     cursor: pointer;
 
     &:hover {
@@ -21,7 +28,7 @@
   }
 }
 
-@media all and (min-width: 800px) {
+@include media-breakpoint-up(md) {
   :host {
     border-right: 1px solid $border-color;
   }
