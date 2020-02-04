@@ -1,0 +1,10 @@
+<!-- https://stackoverflow.com/a/34013006 -->
+
+<div
+  tabindex="0"
+  class="checkbox"
+  [ngClass]="{ 'is-checked': checked }"
+  [attr.checked]="checked"
+  (click)="checked = !checked"
+></div>
+<span>Remember me</span>

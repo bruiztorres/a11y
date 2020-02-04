@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Task } from './task.model';
 
 const tasks: Task[] = [
+  { id: 0,  name: 'checkbox', title: 'Checkbox' },
   { id: 1,  name: 'layout', title: 'Layout' },
   { id: 2,  name: 'sidebar', title: 'Sidebar' },
   { id: 3,  name: 'footer', title: 'Footer' },

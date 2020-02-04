@@ -7,6 +7,7 @@ import * as tasks from './';
 
 @NgModule({
   declarations: [
+    tasks.CheckboxTaskComponent,
     tasks.FooterTaskComponent,
     tasks.LayoutTaskComponent,
     tasks.SidebarTaskComponent,
