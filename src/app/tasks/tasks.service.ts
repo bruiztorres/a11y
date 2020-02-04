@@ -5,17 +5,18 @@ import { Task } from './task.model';
 
 const tasks: Task[] = [
   { id: 0,  name: 'checkbox', title: 'Checkbox' },
-  { id: 1,  name: 'layout', title: 'Layout' },
-  { id: 2,  name: 'sidebar', title: 'Sidebar' },
-  { id: 3,  name: 'footer', title: 'Footer' },
-  { id: 4,  name: 'task4', title: 'Task 4' },
-  { id: 5,  name: 'task5', title: 'Task 5' },
-  { id: 6,  name: 'task6', title: 'Task 6' },
-  { id: 7,  name: 'task7', title: 'Task 7' },
-  { id: 8,  name: 'task8', title: 'Task 8' },
-  { id: 9,  name: 'task9', title: 'Task 9' },
-  { id: 10, name: 'task10', title: 'Task 10' },
-  { id: 11, name: 'task11', title: 'Task 11' }
+  { id: 1,  name: 'payment-method', title: 'Payment Method' },
+  { id: 2,  name: 'layout', title: 'Layout' },
+  { id: 3,  name: 'sidebar', title: 'Sidebar' },
+  { id: 4,  name: 'footer', title: 'Footer' },
+  { id: 5,  name: 'video', title: 'Video' },
+  { id: 6,  name: 'images', title: 'Images' },
+  { id: 7,  name: 'form', title: 'Form' },
+  { id: 8,  name: 'fields', title: 'Fields' },
+  { id: 9,  name: 'task8', title: 'Checkbox' },
+  { id: 10,  name: 'task9', title: 'Payment method' },
+  { id: 11, name: 'task10', title: 'Task 10' },
+  { id: 12, name: 'task11', title: 'Task 11' }
 ];
 
 @Injectable({
