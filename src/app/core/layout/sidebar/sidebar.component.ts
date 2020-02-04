@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 
 import { TasksService } from 'src/app/tasks/tasks.service';
 import { Task } from 'src/app/tasks/task.model';
@@ -8,10 +9,13 @@ import { Task } from 'src/app/tasks/task.model';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent implements OnInit {
-  public tasks$: Observable<Task[]>;
+  private tasks$: Observable<Task[]>;
+  public searchTerm$ = new BehaviorSubject<string>('');
+  public filteredTasks$: Observable<Task[]>;
 
   constructor(
     private router: Router,
@@ -19,18 +23,33 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.tasks$ = this.taskService.all();
+
+    this.filteredTasks$ = this.searchTerm$.pipe(
+      distinctUntilChanged(),
+      debounceTime(300),
+      switchMap(this.searchTasks.bind(this))
+    );
   }
 
   public openPath(path: string): void {
     this.router.navigateByUrl(path);
   }
 
-  public onSearchChange(search: string) {
+  public trackByTask(_: number, item: Task): number {
+    return item.id;
+  }
 
-  /*   const formattedSearch = search.toLowerCase();
+  private searchTasks(searchTerm: string): Observable<Task[]> {
+    if (!searchTerm) {
+      return this.tasks$;
+    }
 
-    this.tasks = linkableTasks.filter(({ title }) => {
-      return title.toLowerCase().includes(formattedSearch);
-    }); */
+    searchTerm = searchTerm.toLowerCase();
+
+    return this.tasks$.pipe(
+      map((tasks: Task[]) => tasks.filter((task: Task) =>
+        task.name.toLowerCase().indexOf(searchTerm) > -1
+      ))
+    );
   }
 }
