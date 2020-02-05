@@ -18,6 +18,7 @@ import * as tasks from './';
     tasks.SocialNetworkTaskComponent,
   ],
   imports: [
+    tasks.RouterTaskModule,
     SharedModule,
     CommonModule,
     ReactiveFormsModule,

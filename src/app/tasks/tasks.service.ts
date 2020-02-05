@@ -10,8 +10,8 @@ const tasks: Task[] = [
   { id: 3,  name: 'links', title: 'Links' },
   { id: 4,  name: 'social-network', title: 'Social Network' },
   { id: 5,  name: 'payment-method', title: 'Payment Method' },
-  { id: 6,  name: 'form', title: 'Form' },
-  { id: 7,  name: 'routing', title: 'Routing' },
+  { id: 6,  name: 'routing', title: 'Routing' },
+  { id: 7,  name: 'form', title: 'Form' }
 ];
 
 @Injectable({
