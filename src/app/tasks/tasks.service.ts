@@ -9,6 +9,7 @@ const tasks: Task[] = [
   { id: 2,  name: 'layout', title: 'Layout' },
   { id: 3,  name: 'sidebar', title: 'Sidebar' },
   { id: 4,  name: 'footer', title: 'Footer' },
+  { id: 5,  name: 'form', title: 'Form' },
   { id: 5,  name: 'video', title: 'Video' },
   { id: 6,  name: 'images', title: 'Images' },
   { id: 7,  name: 'form', title: 'Form' },
