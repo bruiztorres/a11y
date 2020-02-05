@@ -3,8 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-task',
-  templateUrl: './form-task.component.html',
-  styleUrls: ['./form-task.component.scss']
+  templateUrl: './form-task.component.html'
 })
 export class FormTaskComponent{
   public form: FormGroup;
