@@ -10,7 +10,7 @@ import * as tasks from './';
 @NgModule({
   declarations: [
     tasks.CheckboxTaskComponent,
-    tasks.FooterTaskComponent,
+    tasks.LinksTaskComponent,
     tasks.LayoutTaskComponent,
     tasks.SidebarTaskComponent,
     tasks.PaymentMethodTaskComponent,

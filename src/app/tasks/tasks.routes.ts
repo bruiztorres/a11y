@@ -9,7 +9,7 @@ export const tasksRoutes: Routes = [
       { path: 'checkbox', component: tasks.CheckboxTaskComponent },
       { path: 'form', component: tasks.FormTaskComponent },
       { path: 'payment-method', component: tasks.PaymentMethodTaskComponent },
-      { path: 'footer', component: tasks.FooterTaskComponent },
+      { path: 'links', component: tasks.LinksTaskComponent },
       { path: 'layout', component: tasks.LayoutTaskComponent },
       { path: 'sidebar', component: tasks.SidebarTaskComponent }
     ]

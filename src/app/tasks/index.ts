@@ -1,4 +1,4 @@
-export { FooterTaskComponent } from './footer-task/footer-task.component';
+export { LinksTaskComponent } from './links-task/links-task.component';
 export { FormTaskComponent } from './form-task/form-task.component';
 export { LayoutTaskComponent } from './layout-task/layout-task.component';
 export { SidebarTaskComponent } from './sidebar-task/sidebar-task.component';
