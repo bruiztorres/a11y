@@ -15,6 +15,7 @@ import * as tasks from './';
     tasks.SidebarTaskComponent,
     tasks.PaymentMethodTaskComponent,
     tasks.FormTaskComponent,
+    tasks.SocialNetworkTaskComponent,
   ],
   imports: [
     SharedModule,

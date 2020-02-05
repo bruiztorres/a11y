@@ -10,6 +10,7 @@ export const tasksRoutes: Routes = [
       { path: 'form', component: tasks.FormTaskComponent },
       { path: 'payment-method', component: tasks.PaymentMethodTaskComponent },
       { path: 'links', component: tasks.LinksTaskComponent },
+      { path: 'social-network', component: tasks.SocialNetworkTaskComponent },
       { path: 'layout', component: tasks.LayoutTaskComponent },
       { path: 'sidebar', component: tasks.SidebarTaskComponent }
     ]

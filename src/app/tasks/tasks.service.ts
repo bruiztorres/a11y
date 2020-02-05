@@ -8,6 +8,7 @@ const tasks: Task[] = [
   { id: 1,  name: 'layout', title: 'Layout' },
   { id: 2,  name: 'sidebar', title: 'Sidebar' },
   { id: 3,  name: 'links', title: 'Links' },
+  { id: 3,  name: 'social-network', title: 'Social Network' },
   { id: 4,  name: 'video', title: 'Video' },
   { id: 5,  name: 'payment-method', title: 'Payment Method' },
   { id: 6,  name: 'form', title: 'Form' },
