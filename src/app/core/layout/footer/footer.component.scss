@@ -8,23 +8,31 @@ $footer-height: 8rem;
   padding: $spacer;
   background-color: $footer-background;
   height: $footer-height;
+  justify-content: space-between;
 }
 
 .footer {
-  &__items {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
   &__item {
     margin-bottom: $spacer / 4;
+    margin-right: $spacer;
   }
 
   &__link {
     color: $white;
+  }
+
+  &__social-network-link {
+    color: $white;
+    font-size: 1.5rem;
+    margin-left: $spacer;
+  }
+
+  &__items,
+  &__social-networks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
   }
 }

@@ -4,19 +4,19 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Search..."
-        (keyup)="onSearchChange($event.target.value)"
+        placeholder="Search a task"
+        (keyup)="searchTerm$.next($event.target.value)"
       />
     </div>
   </form>
 
-  <div class="sidebar__items" *ngIf="tasks$ | async as tasks">
+  <div class="sidebar__items" *ngIf="filteredTasks$ | async as tasks">
     <div
       class="sidebar__item"
-      *ngFor="let task of tasks"
+      *ngFor="let task of tasks; let index = index; trackBy: trackByTask"
       (click)="openPath('task/' + task.name)"
     >
-      {{ task.title }}
+      {{ index }}. {{ task.title }}
     </div>
 
     <div *ngIf="!tasks.length">

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import * as components from './layout';
 
@@ -17,6 +18,7 @@ const layoutComponents = [
     ...layoutComponents
   ],
   imports: [
+    RouterModule,
     CommonModule
   ]
 })

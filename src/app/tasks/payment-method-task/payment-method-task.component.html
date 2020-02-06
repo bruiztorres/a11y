@@ -1,0 +1,13 @@
+<div class="payment-methods">
+  <h1 id="paymentMethod" class="h3 mb-4">Payment methods</h1>
+
+  <div
+    *ngFor="let method of paymentMethods"
+    class="payment-method"
+    [ngClass]="{ 'is-selected': method.selected }"
+    [tabindex]="method.focus ? 0 : -1"
+    (click)="selectPaymentMethod(method)"
+  >
+    <img class="payment-method__image" [src]="method.imageUrl" />
+  </div>
+</div>

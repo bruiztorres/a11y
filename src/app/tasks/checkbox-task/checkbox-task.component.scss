@@ -1,0 +1,26 @@
+$checkbox-size: 14px;
+$active-color: #007bff;
+
+.checkbox {
+  width: $checkbox-size;
+  height: $checkbox-size;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
+
+  &.is-checked {
+    border: 1px solid $active-color;
+    background: $active-color;
+
+    &:before {
+      content: "\2713";
+      color: #fff;
+      position: absolute;
+      top: -2px;
+      left: 1px;
+      font-size: 0.7rem;
+    }
+  }
+}
