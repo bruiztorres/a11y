@@ -15,4 +15,4 @@
 
 // When a command from ./commands is ready to use, import with `import * as commands from './commands'` syntax
 // import * as commands from './commands';
-import cypressAxe = require('cypress-axe');
+require('cypress-axe');
