@@ -5,7 +5,7 @@ type PaymentMethod = {
   focus: boolean;
   selected: boolean;
   imageUrl: string;
-}
+};
 
 @Component({
   selector: 'app-payment-method-task',
@@ -25,6 +25,6 @@ export class PaymentMethodTaskComponent {
     this.paymentMethods.forEach(paymentMethod => {
       paymentMethod.focus = method.name === paymentMethod.name;
       paymentMethod.selected = method.name === paymentMethod.name;
-    })
+    });
   }
 }

@@ -5,7 +5,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   selector: 'app-form-task',
   templateUrl: './form-task.component.html'
 })
-export class FormTaskComponent{
+export class FormTaskComponent {
   public form: FormGroup;
 
   constructor(formBuilder: FormBuilder) {

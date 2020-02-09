@@ -15,5 +15,5 @@ export const tasksRoutes: Routes = [
       { path: 'sidebar', component: tasks.SidebarTaskComponent }
     ]
   }
-]
+];
 

@@ -5,7 +5,7 @@ import * as directives from './directives';
 
 const sharedDirectives = [
   directives.FocusDirective
-]
+];
 
 @NgModule({
   declarations: [

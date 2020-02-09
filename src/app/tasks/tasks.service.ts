@@ -26,7 +26,7 @@ export class TasksService {
   }
 
   public get(id: number): Observable<Task> {
-    const task = tasks.find(task => task.id === id);
-    return of(task)
+    const task = tasks.find(t => t.id === id);
+    return of(task);
   }
 }

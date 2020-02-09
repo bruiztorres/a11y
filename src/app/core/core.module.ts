@@ -8,7 +8,7 @@ const layoutComponents = [
   components.FooterComponent,
   components.HeaderComponent,
   components.SidebarComponent,
-]
+];
 
 @NgModule({
   declarations: [
