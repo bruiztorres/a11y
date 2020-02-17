@@ -4,7 +4,13 @@
   tabindex="0"
   class="checkbox"
   [ngClass]="{ 'is-checked': checked }"
+  role="checkbox"
   [attr.checked]="checked"
+  [attr.aria-checked]="checked"
   (click)="checked = !checked"
+  (keyup.Space)="checked = !checked"
+  aria-labelledby="isAccessible"
 ></div>
-<span>Remember me</span>
+<div class="label" id="isAccessible" (click)="checked = !checked">
+  Is your website accessible?
+</div>

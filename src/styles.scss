@@ -2,5 +2,7 @@
 
 @import "styles/abstracts/variables";
 
+@import "styles/base/reset";
+
 @import "styles/vendors/bootstrap",
   "../node_modules/@fortawesome/fontawesome-free/css/all.css";

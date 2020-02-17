@@ -1,13 +1,30 @@
-<div class="payment-methods">
-  <h1 id="paymentMethod" class="h3 mb-4">Payment methods</h1>
+<form aria-labelledby="paymentMethods">
+  <h1 id="paymentMethods" class="h3 mb-4">Payment methods</h1>
 
   <div
-    *ngFor="let method of paymentMethods"
-    class="payment-method"
-    [ngClass]="{ 'is-selected': method.selected }"
-    [tabindex]="method.focus ? 0 : -1"
-    (click)="selectPaymentMethod(method)"
+    role="radiogroup"
+    class="payment-methods"
+    aria-labelledby="paymentMethod"
+    (keyup.arrowup)="handleKeyupChange(direction.Left)"
+    (keyup.arrowleft)="handleKeyupChange(direction.Left)"
+    (keyup.arrowdown)="handleKeyupChange(direction.Right)"
+    (keyup.arrowright)="handleKeyupChange(direction.Right)"
   >
-    <img class="payment-method__image" [src]="method.imageUrl" />
+    <div
+      *ngFor="let method of paymentMethods"
+      class="payment-method"
+      [focus]="method.focus"
+      [ngClass]="{ 'is-selected': method.selected }"
+      [attr.aria-checked]="method.selected"
+      [tabindex]="method.focus ? 0 : -1"
+      (click)="selectPaymentMethod(method)"
+      (keyup.space)="selectPaymentMethod(method)"
+    >
+      <img
+        class="payment-method__image"
+        [src]="method.imageUrl"
+        [alt]="method.name"
+      />
+    </div>
   </div>
-</div>
+</form>

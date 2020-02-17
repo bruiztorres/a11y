@@ -1,26 +1,41 @@
-<div class="sidebar__search">
-  <form>
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search a task"
-        (keyup)="searchTerm$.next($event.target.value)"
-      />
-    </div>
-  </form>
+<nav class="sidebar" aria-labelledby="task-nav">
+  <h1 class="sr-only" id="task-nav">Task bar</h1>
+  <div class="sidebar__search">
+    <form role="search">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search a task"
+          (keyup)="searchTerm$.next($event.target.value)"
+        />
+      </div>
+    </form>
+  </div>
 
-  <div class="sidebar__items" *ngIf="filteredTasks$ | async as tasks">
-    <div
-      class="sidebar__item"
-      *ngFor="let task of tasks; let index = index; trackBy: trackByTask"
-      (click)="openPath('task/' + task.name)"
-    >
-      {{ index }}. {{ task.title }}
-    </div>
+  <div *ngIf="filteredTasks$ | async as tasks">
+    <ul class="sidebar__items" *ngIf="!loading">
+      <li
+        class="sidebar__item"
+        *ngFor="let task of tasks; let index = index; trackBy: trackByTask"
+      >
+        <a
+          class="sidebar__link"
+          [routerLink]="['task', task.name]"
+          routerLinkActive="is-active"
+        >
+          {{ index }}. {{ task.title }}
+        </a>
+      </li>
+    </ul>
 
-    <div *ngIf="!tasks.length">
-      No results found
+    <div role="alert">
+      <div *ngIf="!loading && !tasks.length">
+        No results found
+      </div>
+      <div *ngIf="loading">
+        Loading...
+      </div>
     </div>
   </div>
-</div>
+</nav>

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import * as components from './layout';
 
 const layoutComponents = [
+  components.MainComponent,
   components.FooterComponent,
   components.HeaderComponent,
   components.SidebarComponent,

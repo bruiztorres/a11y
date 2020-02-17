@@ -3,15 +3,13 @@
 $footer-background: $yellow;
 $footer-height: 8rem;
 
-:host {
+.footer {
   display: flex;
   padding: $spacer;
   background-color: $footer-background;
   height: $footer-height;
   justify-content: space-between;
-}
 
-.footer {
   &__item {
     margin-bottom: $spacer / 4;
     margin-right: $spacer;

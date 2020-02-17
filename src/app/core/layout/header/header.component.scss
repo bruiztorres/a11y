@@ -3,7 +3,7 @@
 $icon-color: #333;
 $header-height: 4rem;
 
-:host {
+.header {
   align-items: center;
   border-bottom: 1px solid $border-color;
   display: flex;
@@ -11,9 +11,7 @@ $header-height: 4rem;
   font-weight: bolder;
   height: $header-height;
   padding: $spacer;
-}
 
-.header {
   &__icon {
     color: $icon-color;
     text-decoration: none;

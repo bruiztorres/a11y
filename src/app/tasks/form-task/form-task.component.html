@@ -1,4 +1,4 @@
-<form [formGroup]="form" (submit)="saveForm()">
+<form [formGroup]="form" aria-labelledby="formTask" (submit)="saveForm()">
   <h1 id="formTask" class="h3 mb-4">Form task</h1>
 
   <div class="form-row">
@@ -7,6 +7,7 @@
       <input
         type="text"
         class="form-control"
+        aria-describedby="firstNameDesc"
         [ngClass]="{
           'is-valid':
             form.get('firstName').valid && form.get('firstName').touched,
@@ -18,20 +19,21 @@
         formControlName="firstName"
       />
 
-      <div class="invalid-feedback">
+      <div class="invalid-feedback" role="alert">
         <div
+          id="firstNameDesc"
           *ngIf="form.get('firstName').invalid && form.get('firstName').touched"
         >
-          Please provide a valid first name.
+          Please provide a valid firstName.
         </div>
       </div>
     </div>
-
     <div class="col-md-4 mb-3">
       <label for="lastName">Last name</label>
       <input
         type="text"
         class="form-control"
+        aria-describedby="lastNameDesc"
         [ngClass]="{
           'is-valid':
             form.get('lastName').valid && form.get('lastName').touched,
@@ -42,11 +44,12 @@
         placeholder="Last name"
         formControlName="lastName"
       />
-      <div class="invalid-feedback">
+      <div class="invalid-feedback" role="alert">
         <div
+          id="lastNameDesc"
           *ngIf="form.get('lastName').invalid && form.get('lastName').touched"
         >
-          Please provide a valid last name.
+          Please provide a valid lastName.
         </div>
       </div>
     </div>
@@ -55,28 +58,33 @@
       <input
         type="email"
         class="form-control"
+        aria-describedby="emailDesc"
         [ngClass]="{
           'is-valid': form.get('email').valid && form.get('email').touched,
           'is-invalid': form.get('email').invalid && form.get('email').touched
         }"
         id="email"
-        placeholder="Email"
+        placeholder="Username"
+        aria-describedby="inputGroupPrepend3"
         formControlName="email"
       />
-      <div class="invalid-feedback">
-        <div *ngIf="form.get('email').invalid && form.get('email').touched">
+      <div class="invalid-feedback" role="alert">
+        <div
+          id="emailDesc"
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
           Please provide a valid email.
         </div>
       </div>
     </div>
   </div>
-
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="city">City</label>
       <input
         type="text"
         class="form-control"
+        aria-describedby="cityDesc"
         [ngClass]="{
           'is-valid': form.get('city').valid && form.get('city').touched,
           'is-invalid': form.get('city').invalid && form.get('city').touched
@@ -85,18 +93,21 @@
         placeholder="City"
         formControlName="city"
       />
-      <div class="invalid-feedback">
-        <div *ngIf="form.get('city').invalid && form.get('city').touched">
+      <div class="invalid-feedback" role="alert">
+        <div
+          id="cityDesc"
+          *ngIf="form.get('city').invalid && form.get('city').touched"
+        >
           Please provide a valid city.
         </div>
       </div>
     </div>
-
     <div class="col-md-3 mb-3">
       <label for="state">State</label>
       <input
         type="text"
         class="form-control"
+        aria-describedby="stateDesc"
         [ngClass]="{
           'is-valid': form.get('state').valid && form.get('state').touched,
           'is-invalid': form.get('state').invalid && form.get('state').touched
@@ -105,18 +116,21 @@
         placeholder="State"
         formControlName="state"
       />
-      <div class="invalid-feedback">
-        <div *ngIf="form.get('state').invalid && form.get('state').touched">
+      <div class="invalid-feedback" role="alert">
+        <div
+          id="stateDesc"
+          *ngIf="form.get('state').invalid && form.get('state').touched"
+        >
           Please provide a valid state.
         </div>
       </div>
     </div>
-
     <div class="col-md-3 mb-3">
       <label for="zip">Zip</label>
       <input
         type="text"
         class="form-control"
+        aria-describedby="zipDesc"
         [ngClass]="{
           'is-valid': form.get('zip').valid && form.get('zip').touched,
           'is-invalid': form.get('zip').invalid && form.get('zip').touched
@@ -125,18 +139,21 @@
         placeholder="Zip"
         formControlName="zip"
       />
-      <div class="invalid-feedback">
-        <div *ngIf="form.get('zip').invalid && form.get('zip').touched">
+      <div class="invalid-feedback" role="alert">
+        <div
+          id="zipDesc"
+          *ngIf="form.get('zip').invalid && form.get('zip').touched"
+        >
           Please provide a valid zip.
         </div>
       </div>
     </div>
   </div>
-
   <div class="form-group">
     <div class="form-check">
       <input
         class="form-check-input"
+        aria-describedby="termsDesc"
         [ngClass]="{
           'is-invalid': form.get('terms').invalid && form.get('terms').touched
         }"
@@ -147,14 +164,16 @@
       <label class="form-check-label" for="terms">
         Agree to terms and conditions
       </label>
-      <div class="invalid-feedback">
-        <div *ngIf="form.get('terms').invalid && form.get('terms').touched">
+      <div class="invalid-feedback" role="alert">
+        <div
+          id="termsDesc"
+          *ngIf="form.get('terms').invalid && form.get('terms').touched"
+        >
           You must agree before submitting.
         </div>
       </div>
     </div>
   </div>
-
   <div class="form-group text-right">
     <button class="btn btn-primary" type="submit">Submit form</button>
   </div>

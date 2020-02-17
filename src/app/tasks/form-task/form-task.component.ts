@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Component, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { FormBuilder, Validators, FormGroup, FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'app-form-task',
@@ -7,6 +7,9 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class FormTaskComponent {
   public form: FormGroup;
+
+  @ViewChildren(FormControlName, { read: ElementRef })
+  private fields: QueryList<ElementRef>;
 
   constructor(formBuilder: FormBuilder) {
     this.form = formBuilder.group({
@@ -22,7 +25,22 @@ export class FormTaskComponent {
     });
   }
 
-  public saveForm(): void {
+  public saveForm() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      this.setFocusFirstInvalidControl();
+    }
+
     // Save form data
+  }
+
+  private setFocusFirstInvalidControl() {
+    setTimeout(() => {
+      const firstInvalidField = this.fields.find(({ nativeElement }) =>
+        nativeElement.classList.contains('is-invalid')
+      );
+
+      firstInvalidField.nativeElement.focus();
+    });
   }
 }

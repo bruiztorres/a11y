@@ -1,21 +1,25 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/vendors/bootstrap";
 
-:host {
+.sidebar {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: $spacer;
   border-bottom: 1px solid $border-color;
-}
 
-.sidebar {
   &__search {
-    padding-bottom: $spacer;
+    margin-bottom: $spacer;
+  }
+
+  &__link {
+    color: $body-color;
   }
 
   &__items {
-    margin-top: $spacer;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   &__item {
