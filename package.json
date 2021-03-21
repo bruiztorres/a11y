@@ -52,7 +52,7 @@
     "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.1.2",
     "cypress": "^4.0.2",
-    "cypress-axe": "^0.5.3",
+    "cypress-axe": "^0.12.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^4.4.1",
