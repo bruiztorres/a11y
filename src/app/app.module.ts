@@ -14,7 +14,7 @@ import { appRoutes } from './app.routes';
     HomeComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     BrowserModule,
     CoreModule,
     TasksModule
