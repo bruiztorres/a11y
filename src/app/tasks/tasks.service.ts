@@ -4,14 +4,16 @@ import { Observable, of } from 'rxjs';
 import { Task } from './task.model';
 
 const tasks: Task[] = [
-  { id: 0,  name: 'checkbox', title: 'Checkbox' },
-  { id: 1,  name: 'layout', title: 'Layout' },
-  { id: 2,  name: 'sidebar', title: 'Sidebar' },
-  { id: 3,  name: 'links', title: 'Links' },
-  { id: 4,  name: 'social-network', title: 'Social Network' },
-  { id: 5,  name: 'payment-method', title: 'Payment Method' },
-  { id: 6,  name: 'routing', title: 'Routing' },
-  { id: 7,  name: 'form', title: 'Form' }
+  { id: 0, name: 'landmarks', title: 'Landmarks' },
+  { id: 1, name: 'css-units', title: 'CSS units' },
+  { id: 2, name: 'contrast-color', title: 'Contrast color' },
+  { id: 3, name: 'links', title: 'Links' },
+  { id: 4, name: 'social-network', title: 'Social networks' },
+  { id: 5, name: 'sidebar', title: 'Sidebar' },
+  { id: 6, name: 'checkbox', title: 'Checkbox' },
+  { id: 7, name: 'routing', title: 'Routing' },
+  { id: 8, name: 'form', title: 'Form' },
+  { id: 9, name: 'common-issues', title: 'Common issues' }
 ];
 
 @Injectable({

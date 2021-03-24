@@ -9,13 +9,16 @@ import * as tasks from './';
 
 @NgModule({
   declarations: [
+    tasks.CssUnitsTaskComponent,
     tasks.CheckboxTaskComponent,
     tasks.LinksTaskComponent,
-    tasks.LayoutTaskComponent,
+    tasks.LandmarksTaskComponent,
     tasks.SidebarTaskComponent,
     tasks.PaymentMethodTaskComponent,
     tasks.FormTaskComponent,
     tasks.SocialNetworkTaskComponent,
+    tasks.ContrastColorTaskComponent,
+    tasks.CommonIssuesTaskComponent
   ],
   imports: [
     tasks.RouterTaskModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap, map, tap } from 'rxjs/operators';
 
 import { TasksService } from 'src/app/tasks/tasks.service';
 import { Task } from 'src/app/tasks/task.model';
@@ -13,9 +13,11 @@ import { Task } from 'src/app/tasks/task.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent implements OnInit {
-  private tasks$: Observable<Task[]>;
   public searchTerm$ = new BehaviorSubject<string>('');
   public filteredTasks$: Observable<Task[]>;
+  public loading = false;
+
+  private tasks$: Observable<Task[]>;
 
   constructor(
     private router: Router,
@@ -26,8 +28,10 @@ export class SidebarComponent implements OnInit {
 
     this.filteredTasks$ = this.searchTerm$.pipe(
       distinctUntilChanged(),
+      tap(() => this.loading = true),
       debounceTime(300),
-      switchMap(this.searchTasks.bind(this))
+      switchMap(this.searchTasks.bind(this)),
+      tap(() => this.loading = false),
     );
   }
 

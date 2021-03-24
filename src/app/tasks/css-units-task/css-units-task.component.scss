@@ -1,0 +1,68 @@
+
+:host {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+section {
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid darkmagenta;
+}
+
+strong {
+  font-weight: 700;
+  background-color: #ffbcff;
+  padding: 0 0.125rem;
+}
+
+.px-font {
+  h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.rem-font {
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.px-line-height {
+  h2 {
+    line-height: 40px;
+  }
+
+  p {
+    line-height: 24px;
+  }
+}
+
+.rem-line-height {
+  h2 {
+    line-height: 1.25rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+}
+
+.unitless-line-height {
+  h2 {
+    line-height: 1.25;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}

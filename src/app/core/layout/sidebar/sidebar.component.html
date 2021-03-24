@@ -10,17 +10,22 @@
     </div>
   </form>
 
-  <div class="sidebar__items" *ngIf="filteredTasks$ | async as tasks">
-    <div
-      class="sidebar__item"
-      *ngFor="let task of tasks; let index = index; trackBy: trackByTask"
-      (click)="openPath('task/' + task.name)"
-    >
-      {{ index }}. {{ task.title }}
-    </div>
+  <div *ngIf="filteredTasks$ | async as tasks">
+    <div class="sidebar__items" *ngIf="!loading">
+      <div
+        class="sidebar__item"
+        *ngFor="let task of tasks; let index = index; trackBy: trackByTask"
+        (click)="openPath('task/' + task.name)"
+      >
+        {{ index }}. {{ task.title }}
+    <div role="alert">
+      <div *ngIf="loading">Loading...</div>
 
-    <div *ngIf="!tasks.length">
-      No results found
+      <div *ngIf="!loading">
+        <div *ngIf="!tasks.length">
+          No results found.
+      </div>
+    </div>
     </div>
   </div>
 </div>

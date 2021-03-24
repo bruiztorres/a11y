@@ -1,10 +1,17 @@
-<!-- https://stackoverflow.com/a/34013006 -->
+<div role="application">
+  <!-- https://stackoverflow.com/a/34013006 -->
 
-<div
-  tabindex="0"
-  class="checkbox"
-  [ngClass]="{ 'is-checked': checked }"
-  [attr.checked]="checked"
-  (click)="checked = !checked"
-></div>
-<span>Remember me</span>
+  <div
+    class="checkbox"
+    [ngClass]="{ 'is-checked': checked }"
+    (click)="checked = !checked"
+  ></div>
+  <span>Remember me</span>
+</div>
+
+<hr />
+
+<div>
+  <input id="native-checkbox" type="checkbox" class="mr-2" />
+  <label for="native-checkbox">Remember me</label>
+</div>
