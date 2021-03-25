@@ -1,14 +1,8 @@
-<div class="layout__header">
-  <app-header></app-header>
-</div>
+<app-header class="layout__header"></app-header>
+
 <div class="layout__content">
-  <div class="layout__aside">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="layout__main">
-    <router-outlet></router-outlet>
-  </div>
+  <app-sidebar class="layout__aside"></app-sidebar>
+  <app-main class="layout__main"></app-main>
 </div>
-<div class="layout__footer">
-  <app-footer></app-footer>
-</div>
+
+<app-footer class="layout__footer"></app-footer>
