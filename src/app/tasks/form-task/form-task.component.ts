@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { FormBuilder, Validators, FormGroup, FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'app-form-task',
   templateUrl: './form-task.component.html'
 })
 export class FormTaskComponent {
+  @ViewChildren(FormControlName, { read: ElementRef })
+  private fields: QueryList<ElementRef>;
+
   public form: FormGroup;
 
   constructor(formBuilder: FormBuilder) {
@@ -23,6 +26,18 @@ export class FormTaskComponent {
   }
 
   public saveForm(): void {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
     // Save form data
+  }
+
+  private getFirstInvalidFormElement(): HTMLElement | undefined {
+    const ref = this.fields.find(({ nativeElement }) =>
+      nativeElement.classList.contains('is-invalid')
+    );
+
+    return ref?.nativeElement;
   }
 }

@@ -18,7 +18,8 @@ export class RouterManagerComponent implements OnDestroy {
       // to fix the routing globally
       filter((event: NavigationEnd) => event.url.startsWith('/task/routing')),
       takeUntil(this.destroyed$)
-    ).subscribe(this.setFocusInFirstHeading);
+    );
+    //.subscribe(this.setFocusInFirstHeading);
   }
 
   ngOnDestroy(): void {
