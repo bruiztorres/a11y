@@ -1,5 +1,5 @@
-<section>
-  <h1 class="h3 mb-4">This is the step 2</h1>
+<main aria-labelledby="router-step-2">
+  <h1 id="router-step-2" class="h3 mb-4">This is the step 2</h1>
 
   <p>
     Nullam ut odio eros. Nunc at quam nibh. Praesent pellentesque augue in
@@ -23,13 +23,15 @@
     elementum felis, ac congue justo finibus in. Proin ex libero, molestie
     placerat bibendum id, venenatis ac dui.
   </p>
-</section>
 
-<div class="row">
-  <div class="col-6">
-    <a class="btn btn-secondary" [routerLink]="['../step-1']">Previous Step</a>
+  <div class="row">
+    <div class="col-6">
+      <a class="btn btn-secondary" [routerLink]="['../step-1']"
+        >Previous Step</a
+      >
+    </div>
+    <div class="col-6 text-right">
+      <a class="btn btn-secondary" [routerLink]="['../step-3']">Next Step</a>
+    </div>
   </div>
-  <div class="col-6 text-right">
-    <a class="btn btn-secondary" [routerLink]="['../step-3']">Next Step</a>
-  </div>
-</div>
+</main>
