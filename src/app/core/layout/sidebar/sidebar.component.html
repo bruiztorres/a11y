@@ -18,14 +18,13 @@
         (click)="openPath('task/' + task.name)"
       >
         {{ index }}. {{ task.title }}
-    <div role="alert">
-      <div *ngIf="loading">Loading...</div>
-
-      <div *ngIf="!loading">
-        <div *ngIf="!tasks.length">
-          No results found.
       </div>
     </div>
+
+    <div *ngIf="loading">Loading...</div>
+
+    <div *ngIf="!loading">
+      <div *ngIf="!tasks.length">No results found.</div>
     </div>
   </div>
 </div>
